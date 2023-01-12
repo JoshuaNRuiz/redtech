@@ -1,18 +1,17 @@
 import Link from "next/link";
-import Image from "next/image";
 import React from "react";
+import Icon from "@mui/material/Icon";
 
 import styles from "./Navbar.module.scss";
-import navbarLogo from "../../public/navbar-logo.png";
 
 const {
-    nav,
-    nav__logo__container,
-    nav__logo,
-    nav__link__container,
-    nav__link,
-    "nav__buger-menu__container": nav__burgerMenu__container,
-    "nav__burger-menu__icon": nav__burgerMenu__icon,
+    nav: navClassName,
+    nav__logo: navLogoClassName,
+    nav__link__container: navLinkContainerClassName,
+    nav__link: navLinkClassName,
+    "nav__burger-menu": burgerMenuClassName,
+    "nav__burger-menu__button": burgerMenuButtonClassName,
+    "nav__burger-menu__button__icon": burgerMenuIconClassName,
 } = styles;
 
 const Navbar = () => {
@@ -20,22 +19,22 @@ const Navbar = () => {
         "https://redtech.nyc3.cdn.digitaloceanspaces.com/brand-logo-red.png";
 
     return (
-        <nav className={nav}>
-            <img className={nav__logo} src={logoSrc} alt='' />
+        <nav className={navClassName}>
+            <img className={navLogoClassName} src={logoSrc} alt='' />
 
-            <div className={nav__link__container}>
+            <div className={navLinkContainerClassName}>
                 <Link href='about' passHref legacyBehavior>
-                    <a className={nav__link}>about us</a>
+                    <a className={navLinkClassName}>about us</a>
                 </Link>
                 <Link href='services' passHref legacyBehavior>
-                    <a className={nav__link}>services</a>
+                    <a className={navLinkClassName}>services</a>
                 </Link>
             </div>
 
-            <div
-                className={nav__burgerMenu__container}
-                style={{ display: "none" }}>
-                <div className={nav__burgerMenu__icon}></div>
+            <div className={burgerMenuClassName}>
+                <button className={burgerMenuButtonClassName}>
+                    <Icon className={burgerMenuIconClassName}>menu</Icon>
+                </button>
             </div>
         </nav>
     );
