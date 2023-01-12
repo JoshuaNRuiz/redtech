@@ -1,0 +1,18 @@
+@use "core/colors" as *;
+@use "core/variables" as *;
+
+.services-section {
+    display: flex;
+    justify-content: center;
+    column-gap: 5%;
+    padding: 36px $desktop-horizontal-gutter;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $brand-red;
+    width: 100%;
+
+    &__service-card {
+        background-color: white;
+        width: 250px;
+        height: 250px;
+    }
+}

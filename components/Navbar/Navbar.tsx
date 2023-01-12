@@ -16,23 +16,22 @@ const {
 } = styles;
 
 const Navbar = () => {
+    const logoSrc =
+        "https://redtech.nyc3.cdn.digitaloceanspaces.com/brand-logo-red.png";
+
     return (
         <nav className={nav}>
-            <div className={nav__logo__container}>
-                <Image className={nav__logo} src={navbarLogo} alt='' />
-            </div>
-            <div className={nav__link__container}>
-                <Link href='consultation' passHref legacyBehavior>
-                    <a className={nav__link}>Consultation</a>
-                </Link>
-                <Link href='about' passHref legacyBehavior>
-                    <a className={nav__link}>about</a>
-                </Link>
+            <img className={nav__logo} src={logoSrc} alt='' />
 
+            <div className={nav__link__container}>
+                <Link href='about' passHref legacyBehavior>
+                    <a className={nav__link}>about us</a>
+                </Link>
                 <Link href='services' passHref legacyBehavior>
-                    <a className={nav__link}>Services</a>
+                    <a className={nav__link}>services</a>
                 </Link>
             </div>
+
             <div
                 className={nav__burgerMenu__container}
                 style={{ display: "none" }}>

@@ -1,22 +1,23 @@
+@use "core/breakpoints" as *;
 @use "/styles/core/colors" as *;
+@use "core/variables" as *;
 
 .nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 72px;
-    padding: 0 10%;
+    padding: 0 $mobile-horizontal-gutter;
+
+    @include for-tablet-landscape-up {
+        padding: 0 $desktop-horizontal-gutter;
+    }
 
     &__logo {
         width: auto;
         height: 48px;
         filter: brightness(100);
-
-        &__container {
-            display: flex;
-            align-items: center;
-            column-gap: 12px;
-        }
     }
 
     &__link {
@@ -36,20 +37,16 @@
             color: $brand-red;
         }
 
-        &:last-child {
-            border: 1px dashed #fff;
-            border-radius: 8px;
-
-            &:hover {
-                border-color: $brand-red;
-            }
-        }
-
         &__container {
-            display: flex;
+            display: none;
             column-gap: 16px;
-            height: 100%;
-            align-items: center;
+
+            @include for-tablet-landscape-up {
+                display: flex;
+                column-gap: 16px;
+                align-items: center;
+                height: 100%;
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+@use "/styles/core/breakpoints" as *;
 @use "/styles/core/colors" as *;
 @use "/styles/core/variables" as *;
 
@@ -15,50 +16,69 @@
         height: 100vh;
         background-image: linear-gradient(
                 to bottom,
-                rgba(120, 0, 0, 0.5),
-                rgba(120, 0, 0, 0.5)
+                rgba(120, 0, 0, 0.55),
+                rgba(120, 0, 0, 0.55)
             ),
-            url("../../public/header-image.jpg");
+            url("../../public/server-woman.jpg");
+        background-position-x: 45%;
         background-size: cover;
         z-index: -1;
+
+        @include for-tablet-landscape-up {
+            background-position: initial;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        row-gap: 8px;
+        row-gap: 24px;
         padding: 0 $desktop-horizontal-gutter;
         text-align: center;
         height: 80%;
 
+        &__image {
+            width: 200px;
+            height: auto;
+            filter: brightness(100);
+
+            @include for-tablet-landscape-up {
+                width: 350px;
+            }
+        }
+
         &__title {
             margin-left: -4px;
             font-family: "termina", sans-serif;
-            font-size: 64px;
-            font-weight: 00;
-            line-height: 64px;
-            letter-spacing: 8px;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 2px;
             color: #ffffff;
+
+            @include for-tablet-landscape-up {
+                font-size: 64px;
+                letter-spacing: 4px;
+            }
         }
 
         &__subtitle {
             font-family: "Anonymous Pro";
-            font-size: 32px;
+            font-size: 42px;
             font-weight: 400;
             color: #ffffff;
         }
 
         &__button {
-            margin-top: 16px;
-            padding: 8px 12px;
+            position: relative;
+            padding: 12px 18px;
             border: none;
             font-family: "Nunito";
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 1px;
-            border-radius: 2px;
+            border-radius: 4px;
             color: #f8f8f8;
             background-color: $brand-red;
 
@@ -70,6 +90,7 @@
 
     &__detail {
         padding: 0 $desktop-horizontal-gutter;
+        font-family: "Nunito";
         color: #fff;
     }
 }
